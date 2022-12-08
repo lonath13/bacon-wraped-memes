@@ -10,6 +10,8 @@ void setup() {
   //largerDimention = ;//from displayAlogrithm
   //smallerDimention = ;//from displayAlogrithm
   display();
+  //
+  //println("smaller dimention is", smallerDimention, "larger Dimention is", largerDimention):
 }//end setup
 //
 void draw() {
