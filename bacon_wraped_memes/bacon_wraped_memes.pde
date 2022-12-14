@@ -1,32 +1,51 @@
-//global variables
-int appWidth, appHeight, largerDimention, smallerDiention;
-Boolean OS_On=true;
+//Global Variables
+int appWidth, appHeight, largerDimension, smallerDimension;
+Boolean OS_On=false, splashScreenStart=false;
+Boolean nightMode=false; //Bonus #1: populate with sytem clock
+//Ultimate Bonus, Gr 11: use API-sunrise for system clock start, API-sunset for system clock end
+color resetDefaultInk=#000000, white=#FFFFFF, purple=#FF00FF;
+/* Night Mode Comment
+ Purple not for Night Mode, full BLUE
+ resetDefaultInk is Night Mode friendly
+ */
 //
 void setup() {
-  size(800, 800);
-  //fullscreen(); //displayWidth,displayHeight
-  //display algorithm from hello world
+  size(600, 400);
+  //fullScreen(); //displayWidth, displayHeight
   appWidth = width;
   appHeight = height;
-  //largerDimention = ;//from displayAlogrithm
-  //smallerDimention = ;//from displayAlogrithm
-  display();
-  //
-  //println("smaller dimention is", smallerDimention, "larger Dimention is", largerDimention):
-}//end setup
+  //Display Algorithm from Hello World
+  display(); //Purpose: CANVAS fits in monitor & dimension size is known
+  //smaller & larger dimension from Display Algorithm
+  println("Smaller Dimension is", smallerDimension, "Larger Dimension is", largerDimension);
+  population(); //Values based on DISPLAY
+  textSetup();
+  imageSetup();
+}//End setup
 //
 void draw() {
- if(OS_On==false) splashScreen();// OS level mouse click
- //
-}//end draw
+  //Assignemnt #2: OS Level Mouse CLick and Splash Screen
+  if ( OS_On==true && splashScreenStart==false ) splashScreen(); //OS Level MOUSE Click
+  if ( splashScreenStart==true ) homeScreen();
+  //
+}//End draw
 //
 void keyPressed() {
-}//end keyPressed
+  //Splash Screen SPACE Bar
+  if ( OS_On==true && key==' ' ) {
+    splashScreenStart = true;
+    backgroundImage();
+  }//End Splash Screen SPACE Bar
+  //
+  //Key Board Short Cuts
+  if ( ) exit();
+  if ( ) {nightMode = true;} else {nightMode = false;}
+ //
+}//End keyPressed
 //
 void mousePressed() {
-  // OS level MouseClick
-  if(OS_On==false) OS_On=true;//
-  
-}//end mousePressed
+  //OS Level MouseClick
+  if ( OS_On==false ) OS_On=true;//End OS Level MouseClick
+}//End mousePressed
 //
-//End main program
+//End MAIN Program
