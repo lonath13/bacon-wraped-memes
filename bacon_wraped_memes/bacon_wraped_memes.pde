@@ -38,9 +38,19 @@ void keyPressed() {
   }//End Splash Screen SPACE Bar
   //
   //Key Board Short Cuts
-  if ( ) exit();
-  if ( ) {nightMode = true;} else {nightMode = false;}
- //
+  if ( key=='Q' || key=='q' ) exit(); //Option ESC with keyCode
+  if ( key=='N' || key=='n' ) {
+    if ( nightMode==false ) { 
+      nightMode = true;
+      backgroundImage();
+      //Reminder: must redraw all of rectangles too, and Home Screen
+    } else { 
+      nightMode = false;
+      backgroundImage();
+      //Reminder: must redraw all of rectangles too, and Home Screen
+    }
+  }
+  //
 }//End keyPressed
 //
 void mousePressed() {
