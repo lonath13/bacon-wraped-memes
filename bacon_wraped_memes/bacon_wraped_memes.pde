@@ -11,7 +11,7 @@ color resetDefaultInk=#FFFFFF, white=#FFFFFF, purple=#FF00FF, blue=#0000FF , red
  */
 //
 void setup() {
-  size(600, 400);
+  size(800, 800);
   //fullScreen(); //displayWidth, displayHeight
   appWidth = width;
   appHeight = height;
